@@ -1,4 +1,4 @@
-const admin = require('../config/firebase');
+const getFirebaseAdmin = require('../config/firebase');
 
 // POST /api/pain-score
 const logPainScore = async (req, res) => {
@@ -12,8 +12,7 @@ const logPainScore = async (req, res) => {
     if (score < 0 || score > 10) {
       return res.status(400).json({ error: 'Score must be between 0 and 10' });
     }
-
-    const db = admin.firestore();
+const db = getFirebaseAdmin().firestore();
     const entry = {
       patientId,
       patientName,
