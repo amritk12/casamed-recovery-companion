@@ -6,7 +6,13 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const sessionId = 'guest-session-001';
+  const [sessionId] = useState(() => {
+  const existing = localStorage.getItem('casamed_session_id');
+  if (existing) return existing;
+  const newId = 'session-' + Math.random().toString(36).substr(2, 9);
+  localStorage.setItem('casamed_session_id', newId);
+  return newId;
+});
   const bottomRef = useRef(null);
   const navigate = useNavigate();
 
