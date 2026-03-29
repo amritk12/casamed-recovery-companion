@@ -1,0 +1,318 @@
+{
+  "info": {
+    "_postman_id": "bbad6a6d-aa11-4300-920d-c66f986b0f4c",
+    "name": "CasaMed API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53577311",
+    "_collection_link": "https://go.postman.co/collection/53577311-bbad6a6d-aa11-4300-920d-c66f986b0f4c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "{{base_url}}/api/sessions",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientName\": \"Rahul Sharma\",\n  \"phoneNumber\": \"919876543210\",\n  \"sessionType\": \"clinic\",\n  \"sessionDateTime\": \"2026-04-01T10:00:00.000Z\",\n  \"therapistName\": \"Dr. Priya Singh\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/sessions",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://casamed-recovery-companion.onrender.com/api/chat/test-postman-001",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://casamed-recovery-companion.onrender.com/api/chat/test-postman-001",
+          "protocol": "https",
+          "host": [
+            "casamed-recovery-companion",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "chat",
+            "test-postman-001"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://casamed-recovery-companion.onrender.com/api/chat",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sessionId\": \"test-postman-001\",\n  \"message\": \"I have lower back pain from sitting 8 hours a day\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://casamed-recovery-companion.onrender.com/api/chat",
+          "protocol": "https",
+          "host": [
+            "casamed-recovery-companion",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "chat"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://casamed-recovery-companion.onrender.com/api/sessions/69c836fa73845c2d4cdb7e53",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://casamed-recovery-companion.onrender.com/api/sessions/69c836fa73845c2d4cdb7e53",
+          "protocol": "https",
+          "host": [
+            "casamed-recovery-companion",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "sessions",
+            "69c836fa73845c2d4cdb7e53"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://casamed-recovery-companion.onrender.com/api/sessions",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://casamed-recovery-companion.onrender.com/api/sessions",
+          "protocol": "https",
+          "host": [
+            "casamed-recovery-companion",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://casamed-recovery-companion.onrender.com/api/sessions",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientName\": \"Rahul Sharma\",\n  \"phoneNumber\": \"919876543210\",\n  \"sessionType\": \"clinic\",\n  \"sessionDateTime\": \"2026-04-01T10:00:00.000Z\",\n  \"therapistName\": \"Dr. Priya Singh\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://casamed-recovery-companion.onrender.com/api/sessions",
+          "protocol": "https",
+          "host": [
+            "casamed-recovery-companion",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://casamed-recovery-companion.onrender.com/api/sessions",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Successful POST request\", function () {",
+              "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+              "});",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientName\": \"Rahul Sharma\",\n  \"phoneNumber\": \"919876543210\",\n  \"sessionType\": \"clinic\",\n  \"sessionDateTime\": \"2026-04-01T10:00:00.000Z\",\n  \"therapistName\": \"Dr. Priya Singh\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://casamed-recovery-companion.onrender.com/api/sessions",
+          "protocol": "https",
+          "host": [
+            "casamed-recovery-companion",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "sessions"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
