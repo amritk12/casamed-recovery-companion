@@ -100,10 +100,10 @@ export default function Dashboard() {
                 {sessions.map((s) => (
                   <tr
                     key={s._id}
-                    className="border-t border-gray-100 hover:bg-gray-50 cursor-pointer"
-                    onClick={() => setSelectedPatient(s._id)}
+                    className={`border-t border-gray-100 hover:bg-blue-50 cursor-pointer transition ${selectedPatient === s.patientName ? 'bg-blue-50' : ''}`}
+                    onClick={() => setSelectedPatient(s.patientName)}
                   >
-                    <td className="px-4 py-3 font-medium">{s.patientName}</td>
+                    <td className="px-4 py-3 font-medium text-blue-700 underline">{s.patientName}</td>
                     <td className="px-4 py-3">{s.phoneNumber}</td>
                     <td className="px-4 py-3 capitalize">{s.sessionType}</td>
                     <td className="px-4 py-3">
@@ -133,9 +133,20 @@ export default function Dashboard() {
 
         {selectedPatient && (
           <div className="mt-8 bg-white rounded-2xl shadow p-6">
-            <h2 className="text-lg font-bold text-gray-700 mb-4">
-              Pain Score Log — {sessions.find((s) => s._id === selectedPatient)?.patientName}
-            </h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-bold text-gray-700">
+                Pain Score Log — {selectedPatient}
+              </h2>
+              <button
+                onClick={() => setSelectedPatient(null)}
+                className="text-gray-400 hover:text-gray-600 text-sm"
+              >
+                Close
+              </button>
+            </div>
+            <p className="text-xs text-gray-400 mb-4">
+              To add pain scores for this patient, go to <strong>/pain-score</strong> and enter Patient ID as: <span className="bg-gray-100 px-2 py-0.5 rounded font-mono">{selectedPatient}</span>
+            </p>
             {painScores.length === 0 ? (
               <p className="text-gray-400">No pain scores recorded yet.</p>
             ) : (
